@@ -14,8 +14,6 @@ $(document).ready(function () {
         },
         count: function () {
             countdownTimer.time--;
-            console.log(countdownTimer.time);
-            //				$('.timer').html(countdownTimer.time);
             if (countdownTimer.time >= 0) {
                 $('.timer').html('<h3>' + countdownTimer.time + ' seconds remaining</h3>');
             }
@@ -39,7 +37,7 @@ $(document).ready(function () {
     var correct = 0;
     var wrong = 0;
     var q1 = {
-        question : 'Who was the host for Kitchen Kabaret?',
+        question : 'What was the first track to only feature one Beatle?',
         possibleAnswers : ['A. Fud Wrapper',
                      'B. Cookie Ann Milk',
                      'C. Bonnie Appetit',
@@ -164,7 +162,7 @@ $(document).ready(function () {
             countdownTimer.start();
              loadQuestion(index);
         });
-    }	
+    }
 
     // Get the answer and compare it
 
@@ -179,22 +177,22 @@ $(document).ready(function () {
           $("#buttonC").text('');
           $("#buttonD").text('');
           loadQuestion();
-      })
-  }
+      });
+ 
 
     // Show score??
 
-  function showScore() {
-	$('.question').empty();
-	$('.question').append("<h2><p>" + correct + " correct</p></h2>");
-	$('.question').append("<h2><p>" + wrong + " incorrect</p></h2>");
-	countdownTimer.stop();
-    $('.timer').empty();
-    
+//   function showScore() {
+// 	$('.question').empty();
+// 	$('.question').append("<h2><p>" + correct + " correct</p></h2>");
+// 	$('.question').append("<h2><p>" + wrong + " incorrect</p></h2>");
+// 	countdownTimer.stop();
+//     $('.timer').empty();
+//   }
 
     // Gameplay functionality
 
-    setup();
+function setup() {
 $('.answerchoice').on('click', function() {
  console.log($(this));
  if(this.id == 'buttonA') {
@@ -239,4 +237,7 @@ if ((answerChosen == 'D') && (questionArray[index].flags[3] == true)) {
  	$(".answerchoice").hide();
  	showScore();
  }
-});
+}
+)};
+
+ });
