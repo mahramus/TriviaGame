@@ -1,5 +1,5 @@
 var panel = $("#quiz-area");
-var countStartNumber = 30;
+var countStartTimer = 30;
 
 // Questions
 
@@ -27,7 +27,7 @@ var game = {
     countdown: function () {
         this.counter--;
         $("#counter-number").text(this.counter);
-        if (this - counter === 0) {
+        if (this.counter === 0) {
             console.log("TIME UP");
             this.timeUp();
         }
@@ -46,8 +46,8 @@ var game = {
         },
 
     nextQuestion: function () {
-        this.counter - window.countStartTimer;
-        this.$("#counter-number").text(this.counter);
+        this.counter = window.countStartTimer;
+        $("#counter-number").text(this.counter);
         this.currentQuestion++;
         this.loadQuestion.bind(this)();
     },
